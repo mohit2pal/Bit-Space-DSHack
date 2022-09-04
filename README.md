@@ -1,8 +1,4 @@
 # Bit-Space-DSHack
-<div>
-  <h2>Explanation Video:</h2>
-</div>
-<div>
 ![1](https://user-images.githubusercontent.com/93388196/188301372-a0b06fbf-3a5e-40cb-aeaf-815f59045839.jpeg)
 ![2](https://user-images.githubusercontent.com/93388196/188301373-644bf432-ac4a-418d-b3f3-c977c3f2f8a1.jpeg)
 ![3](https://user-images.githubusercontent.com/93388196/188301376-f022801c-f101-487c-8ef6-dd90aab54f1b.jpeg)
@@ -13,4 +9,3 @@
 ![8](https://user-images.githubusercontent.com/93388196/188301390-44559c31-888b-46b0-871f-2c3415cc6ab5.jpeg)
 ![9](https://user-images.githubusercontent.com/93388196/188301392-f4f43d46-7636-48c9-afb7-1b6082d3af06.jpg)
 ![10](https://user-images.githubusercontent.com/93388196/188301394-08f87b05-2eca-46fd-be1b-6c186edd2bfa.jpg)
-</div>
