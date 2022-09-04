@@ -4,8 +4,8 @@
 ![3](https://user-images.githubusercontent.com/93388196/188299648-b512f75d-c3e8-4224-b90d-73509d46f949.jpg)
 ![4](https://user-images.githubusercontent.com/93388196/188299650-c106f629-3d30-44a0-8311-010ea03e117e.jpg)
 ![5](https://user-images.githubusercontent.com/93388196/188299653-be2816b1-1c37-4af5-ba3b-995ea4ff439e.jpg)
-![MEDINVOICE](https://user-images.githubusercontent.com/93388196/188299796-1e71b1d1-2b54-40b2-a047-6d00b9dbb906.jpg)
-![7](https://user-images.githubusercontent.com/93388196/188299658-650d89ab-ff92-4856-92a2-1cdf7d526828.jpg)
-![8](https://user-images.githubusercontent.com/93388196/188299662-8b4a37fb-e925-44b5-8801-c0c51c3a2ad2.jpg)
-![9](https://user-images.githubusercontent.com/93388196/188299664-9ddb05e1-2fcf-426b-b178-f325cea7718d.jpg)
-![10](https://user-images.githubusercontent.com/93388196/188299665-699ee3be-7091-4eb8-90b8-495287b66727.jpg)
+![6](https://user-images.githubusercontent.com/93388196/188302345-5c7bb958-92df-49c4-bd1d-65a135ea7883.jpg)
+![7](https://user-images.githubusercontent.com/93388196/188302315-8d80d024-25ef-4303-8b73-4bea099ba51e.jpg)
+![8](https://user-images.githubusercontent.com/93388196/188302316-c76f354b-a852-49f4-bce4-8e632e637c75.jpg)
+![9](https://user-images.githubusercontent.com/93388196/188302313-fd19de4c-4fa2-44a8-83e8-46d34d7c3168.jpg)\
+![10](https://user-images.githubusercontent.com/93388196/188302326-93f7db68-aa79-4dd9-baa8-8c7b1b0c5110.jpg)
