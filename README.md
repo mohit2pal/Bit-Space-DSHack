@@ -1,4 +1,4 @@
-# Biy-Space-DSHack
+# Bit-Space-DSHack
 ![1](https://user-images.githubusercontent.com/93388196/188299627-070fd76e-4233-4a86-bd84-49ed3b114995.jpg)
 ![2](https://user-images.githubusercontent.com/93388196/188299642-810c0e98-59a3-4c42-8cdf-7c622458e236.jpg)
 ![3](https://user-images.githubusercontent.com/93388196/188299648-b512f75d-c3e8-4224-b90d-73509d46f949.jpg)
