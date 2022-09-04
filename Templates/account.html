@@ -93,27 +93,47 @@
         </div>
 
 
-    <section id="data">
         <div class="container">
             <div id="box">
                 <!-- <img class="wave" src="/static/images/wave.png"> -->
                 <h3>Prescription</h3>
                 <table class="table table-striped" id="table-details">
-                    <tbody>
-                        <tr>
-                            <th scope="row" style="text-align:center">zimig</th>
-                            <td>2 times a day</td>
-                            <td>1 month</td>
-                            <td>1 tablet</td>
-                        </tr>
-                    </tbody>
                 </table>
-                <a href="gs://sto_dat/108608746534638122947-1.jpg"><button type="button" class="btn btn-primary">Download</button></a>
+                <a href="https://storage.cloud.google.com/sto_dat/108608746534638122947-1.jpg?authuser=1"><button type="button" class="btn btn-primary">Download</button></a>
             </div>
         </div>
-    </section>
 
     <script>
+
+
+        function rewrite() {
+        document.getElementById('table-details').innerHTML = `
+        <tbody>
+          <tr>
+              <th scope="row" style="text-align:center">zimig</th>
+              <td>Two times a Day</td>
+              <td>1 month</td>
+              <td>1 tablet</td>
+          </tr>
+      </tbody>
+      <tbody>
+          <tr>
+              <th scope="row" style="text-align:center">levosizzimig</th>
+              <td>one times a Day</td>
+              <td>2 month</td>
+              <td>1 tablet</td>
+          </tr>
+      </tbody>
+      <tbody>
+          <tr>
+              <th scope="row" style="text-align:center">forcan</th>
+              <td>Two times a Day</td>
+              <td>3 month</td>
+              <td>1 tablet</td>
+          </tr>
+      </tbody>
+      `
+    }
 
         const navbar_join = document.getElementById('join')
     
@@ -269,6 +289,7 @@ function upload() {
   
   upload_file_name.innerHTML = `Browse File to Upload`
   base(name_of_file)
+  rewrite()
 
 }
 
@@ -318,27 +339,14 @@ function base(nameFile) {
       //     update_refined_image(resp)
   
       // )
+
   
   })}
-
-
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('GET', './static/json/drug.json', true)
-
-  xhr.onload = function() {
-    var block = JSON.parse(this.responseText)
-
-
-  }
-  xhr.send()
 
     
     
     </script>
 
-
-    <script src="/static/js/account.js"></script>
     <script src="/static/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
     <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>

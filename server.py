@@ -49,6 +49,12 @@ def home():
         decode = open('IMAGE.jpg', 'wb')
         decode.write(base64.b64decode(img_base64['pdf']))
         
+        stor = gcs_upload(current_user , "1")
+        
+        ocr = ocr_function(stor)
+        
+        print(ocr)    
+        
     
 
     return render_template('account.html',current_user_id=current_user)
@@ -228,4 +234,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

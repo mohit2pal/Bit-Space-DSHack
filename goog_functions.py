@@ -27,11 +27,13 @@ def gcs_upload(current_user, prep_no):
     # Name of the object in local file system
     object_name_in_gcs_bucket.upload_from_filename('IMAGE.jpg')
     
+    return prep_name
+    
 
 
 
-def ocr_function(current_user, prep_no):
-    prep_name = current_user + "-" + prep_no + ".jpg"
+def ocr_function(prep_name):
+    # prep_name = current_user + "-" + prep_no + ".jpg"
     prep_uri = "gs://sto_dat/" + prep_name
 
     image = vision.Image()
