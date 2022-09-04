@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/static/css/profile.css">
+
+
+
+    <title>Profile</title>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light" style="background-color: #e1f2fe;">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img class="logo" src="/static/images/medinvoice.jpeg" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" style="font-size: 18px;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutus" style="font-size: 18px;">Upload</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq" style="font-size: 18px;">Profile</a>
+                    </li>
+                </ul>
+                <!-- <a href="projects.html"><button type="button" class="btn btn-outline-secondary mx-2"
+                        style="border-radius: 15px 15px 15px 15px ;">View Projects</button></a>
+                <button class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Join
+                    Us</button> -->
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="user-details">
+            <img src="/static/images/man.png" alt="" id="user-image">
+            <h3 style="margin-top:2%;text-align: center;">Welcome! MedInvoice User</h3>
+        </div>
+        <div class="shadow-lg p-4 mb-4 my-4 bg-body rounded " id="details">
+            <h1>Personal Details </h1>
+            <form class="row g-3">
+                <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your full name" value="" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="validationDefault05" placeholder="Enter your age" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Gender</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="Enter your Gender" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Blood Group</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="Enter your Blood Group" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Height</label>
+                    <input type="number" class="form-control" id="validationDefault05" placeholder="Enter your Height in cm" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Weight</label>
+                    <input type="number" class="form-control" id="validationDefault05" placeholder="Enter your Weight in kg" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Contact info</label>
+                    <input type="tel" class="form-control" id="validationDefault05" placeholder="Enter your Mobile number" maxlength="10" required>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+              </form>
+        </div>
+    </div>
+
+
+    <script src="/static/js/account.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+    "0000": "test",
+    "0": {
+        "drug_name": "zimig 1%"
+    },
+    "7077": {
+        "drug_name": "zimig 1%",
+        "Frequency" : "Two times a Day",
+        "Quantity" : "1 tablet",
+        "Total Dosage" : "1 month"
+    },
+
+    "8976": {
+        "drug_name": "levosiz",
+        "Frequency" : "one times a Day",
+        "Quantity" : "1 tablet",
+        "Total Dosage" : "2 month"
+    },
+
+    "6543": {
+        "drug_name": "forcan",
+        "Frequency" : "Two times a Day",
+        "Quantity" : "1 tablet",
+        "Total Dosage" : "3 month"
+    }
+    
+}

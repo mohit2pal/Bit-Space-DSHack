@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/static/css/profile.css">
+
+
+
+    <title>Profile</title>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light" style="background-color: #e1f2fe;">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img class="logo" src="/static/images/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home" style="font-size: 18px;">Home</a>
+                    </li>
+                </ul>
+                <!-- <a href="projects.html"><button type="button" class="btn btn-outline-secondary mx-2"
+                        style="border-radius: 15px 15px 15px 15px ;">View Projects</button></a>
+                <button class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Join
+                    Us</button> -->
+                <a id="join"></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="user-details">
+            <a id="user-image"></a>
+            <h3 style="margin-top:2%;text-align: center;">Welcome! MedInvoice User</h3>
+        </div>
+        <div class="shadow-lg p-4 mb-4 my-4 bg-body rounded " id="details">
+           
+            <h1>Personal Details </h1>
+            <br>
+            <form class="row g-3" action="" method="post">
+                <div class="col-md">
+                    {{form.name.label}}
+                    {{form.name(size=30,style='height: 30px')}}
+                </div>
+                <div class="col-md">
+                    {{form.age.label}}
+                    {{form.age(size=30,style='height: 30px')}}
+                </div>
+                <div class="col-md"> 
+                    {{form.gender.label}}
+                    {{form.gender(size=30,style='height: 30px')}}
+                </div>
+                <div class="col-md">
+                    {{form.blood_group.label}}
+                    {{form.blood_group(size=30,style='height: 30px')}}
+                </div>
+                <div class="col-md">
+                    {{form.height.label}}
+                    <br>
+                    {{form.height(size=30,style='height: 30px')}}
+                </div>
+                <div class="col-md">
+                    {{form.weight.label}}
+                    <br>
+                    {{form.weight(size=30,style='height: 30px')}}
+                </div>
+                <div class="col-md">
+                    {{form.contact.label}}
+                    <br>
+                    {{form.contact(size=30,style='height: 30px')}}
+                </div>
+                <div class="col-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+              </form>
+        </div>
+    </div>
+
+    <script>
+
+        const navbar_join = document.getElementById('join')
+        const imgs = document.getElementById('user-image')
+
+        current_user = {{ current_user_id | tojson }}
+        console.log(typeof current_user)
+
+        var id_json
+
+        function data_read() {
+            var xhr = new XMLHttpRequest()
+            xhr.open('GET', '/static/json/user_id.json', true)
+
+            xhr.onload = function () {
+                jsondata = JSON.parse(this.responseText)
+
+                id_json = jsondata
+            }
+            xhr.send()
+            return 0
+        }
+
+
+        async function data_load() {
+            const id_data = await data_read()
+            const mytimeout = setTimeout(rundata, 2000)
+        }
+
+        function rundata() {
+            console.log(id_json)
+            navbar_join.innerHTML = `<a href="/logout" class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Sign Out</a><b>
+                                     <a  style='font-weight: 1000;font-size: 20px;margin-left:6px;color:#329f5b'> ${id_json[current_user]["user_name"]}
+                                     <img src="${id_json[current_user]["user_dp"]}" style='border-radius: 50%;height: 32px;width: 32px;margin-left:6px'></a>`
+
+            imgs.innerHTML = ` <img style= "width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 2%;
+            justify-content: center;
+            margin-left: 45%;" src="${id_json[current_user]["user_dp"]}">`
+        }
+
+
+        if (current_user == "not_defined") {
+            navbar_join.innerHTML = `<p>Error!!</p>`
+        }
+        else {
+            data_load()
+        }
+    
+        
+        <!--PUSH NOTIFICATIONS-->
+
+        function showNotification(){
+            let date = new Date();
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let time = hh + ":" + mm 
+            console.log(time);
+            let in_time = "23:40"
+
+            if(time === in_time){
+            const notification = new Notification("New Msg from Chrome",{
+                body:"Hello Bhai!!"
+            });
+            }
+            else{setTimeout(() => {showNotification();}, 1000);}
+        }
+
+        console.log(Notification.permission);
+        if (Notification.permission === 'granted') {
+            showNotification();
+        }
+        else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                if(permission==="granted"){
+                    showNotification();
+                }
+            })
+        }
+
+    </script>
+
+    <script src="/static/js/account.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+</body>
+
+
+
+</html>

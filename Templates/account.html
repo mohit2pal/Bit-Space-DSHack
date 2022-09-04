@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/static/css/accountstyle.css">
+    <link rel="stylesheet" href="/static/css/accountfilter.css">
+
+
+
+    <title>MEDINVOICE || HOME</title>
+    <style>
+        #gif {
+            width: 30%;
+            height: 30%;
+            float: left;
+            margin-bottom: 10%;
+        }
+
+        #accordionFlushExample {
+            float: right;
+            margin-top: 8%;
+        }
+
+        .accordion-flush .accordion-item .accordion-button {
+            border-radius: 10px;
+            background: aliceblue;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light" style="background-color: #e1f2fe;">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img class="logo" src="/static/images/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile" style="font-size: 18px;">Profile </a>
+                    </li>
+                </ul>
+                <!-- <a href="projects.html"><button type="button" class="btn btn-outline-secondary mx-2"
+                        style="border-radius: 15px 15px 15px 15px ;">View Projects</button></a>
+                <button class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Join
+                    Us</button> -->
+                <a id="join" ></a>
+            </div>
+        </div>
+    </nav>
+        <div class="container">
+            <div class="top">
+                <div class="wrapper">
+                    <header>File Uploader</header>
+                    <div class="inputs">
+                        <input class="file-input" type="file" id="file_input" accept="image/jpg">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p id="upload_fileName">Browse File to Upload</p>
+                    </div>
+                    <section class="progress-area"></section>
+                    <section class="uploaded-area"></section>
+
+                    <!-- <button onclick="location.href = 'index.html';" id="myButton" class="float-left submit-button" >Home</button> -->
+                    <div class="sub">
+                        <button id='btn'>Upload</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pres">
+                <a href="#prescriptions"><button type="button" class="btn btn-secondary btn-lg"style="background-color:#329f5b;margin-top:30%">My Prescriptions</button></a>
+            </div>
+        </div>
+
+    <section id="prescriptions">
+        <div class="container">
+            <div class="shadow mb-5 col-10  bg-body rounded" id="med" style="background-image: url('/static/images/wave.png');margin-left: 90px;">
+                <!-- <img src="/static/images/wave.png" alt="" style="height:50px;width: 50px;z-index: -1;"> -->
+                    <b style="margin-left:4%">No prescriptions added</b>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <section id="data">
+        <div class="container">
+            <div id="box">
+                <!-- <img class="wave" src="/static/images/wave.png"> -->
+                <h3>Prescription</h3>
+                <table class="table table-striped" id="table-details">
+                    <tbody>
+                        <tr>
+                            <th scope="row" style="text-align:center">zimig</th>
+                            <td>2 times a day</td>
+                            <td>1 month</td>
+                            <td>1 tablet</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="gs://sto_dat/108608746534638122947-1.jpg"><button type="button" class="btn btn-primary">Download</button></a>
+            </div>
+        </div>
+    </section> -->
+
+    <script>
+
+        const navbar_join = document.getElementById('join')
+    
+        current_user = {{ current_user_id | tojson}}
+        console.log(typeof current_user)
+    
+        var id_json
+    
+        function data_read(){
+            var xhr = new XMLHttpRequest()
+            xhr.open('GET', '/static/json/user_id.json', true)
+        
+            xhr.onload = function () {
+                jsondata = JSON.parse(this.responseText)
+        
+                id_json = jsondata
+            }
+            xhr.send()
+            return 0
+        }
+    
+        async function data_load() {
+            const id_data = await data_read()
+            const mytimeout = setTimeout(rundata, 2000)
+        }
+    
+        function rundata() {
+            console.log(id_json)
+            navbar_join.innerHTML = `<a href="/logout" class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Sign Out</a>
+                                     <a  style='font-weight: 1000;font-size: 20px; margin-left:6px;color:#329f5b'> ${id_json[current_user]["user_name"]}
+                                     <img src="${id_json[current_user]["user_dp"]}" style='border-radius: 50%;height: 32px;width: 32px;margin-left:6px'></a>`
+        }
+    
+    
+        if( current_user == "not_defined") {
+            navbar_join.innerHTML = `<p>Error!!</p>`
+        }
+        else {
+            data_load()
+        }
+
+
+
+
+// let inputt = document.querySelector(".inputs")
+const file_input = document.querySelector("#file_input");
+let progressArea = document.querySelector(".progress-area");
+let uploadedArea = document.querySelector(".uploaded-area");
+const button = document.getElementById('btn')
+const upload_file_name = document.getElementById('upload_fileName')
+
+let uploaded_pdf
+let body
+let nam
+let name_of_file
+
+// inputt.addEventListener("click", () =>{
+//   file_input.click();
+// });
+
+button.addEventListener("click", upload)
+
+file_input.addEventListener("change", ({target}) => {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+  uploaded_pdf = reader.result;
+  console.log(typeof uploaded_pdf)
+  console.log(uploaded_pdf)
+
+  let file = target.files[0];
+  if(file){
+    let fileName = file.name;
+    name_of_file = fileName
+    upload_file_name.innerHTML = `${name_of_file} selected`
+    if(fileName.length >= 12){
+      let splitName = fileName.split('.');
+      fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
+    }
+    nam = fileName
+    console.log("File Name:"+ nam)
+  // reader.fileName = file.name
+  // reader.onload = function(file_name) {
+  //   console.log(file_name.target.fileName)
+  // }
+  // document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+  }
+});
+  reader.readAsDataURL(target.files[0]);
+});
+
+// fileInput.onchange = ({target})=>{
+//   let file = target.files[0];
+//   upload()
+//   if(file){
+//     let fileName = file.name;
+//     if(fileName.length >= 12){
+//       let splitName = fileName.split('.');
+//       fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
+//     }
+//     uploadFile(fileName);
+//   }
+// }
+
+function uploadFile(name){
+
+  const datat = JSON.stringify(body)
+  console.log(datat)
+
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', '/home', true)
+  xhr.setRequestHeader('Content-Type', 'application/json')
+  xhr.upload.addEventListener("progress", ({loaded, total}) =>{
+    let fileLoaded = Math.floor((loaded / total) * 100);
+    let fileTotal = Math.floor(total / 1000);
+    let fileSize;
+    (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024*1024)).toFixed(2) + " MB";
+    let progressHTML = `<li class="row">
+                          <i class="fas fa-file-alt"></i>
+                          <div class="content">
+                            <div class="details">
+                              <span class="name">${name} • Uploading</span>
+                              <span class="percent">${fileLoaded}%</span>
+                            </div>
+                            <div class="progress-bar">
+                              <div class="progress" style="width: ${fileLoaded}%"></div>
+                            </div>
+                          </div>
+                        </li>`;
+    uploadedArea.classList.add("onprogress");
+    progressArea.innerHTML = progressHTML;
+    if(loaded == total){
+      progressArea.innerHTML = "";
+      let uploadedHTML = `<li class="row">
+                            <div class="content upload">
+                              <i class="fas fa-file-alt"></i>
+                              <div class="details">
+                                <span class="name">${name} • Uploaded</span>
+                                <span class="size">${fileSize}</span>
+                              </div>
+                            </div>
+                            <i class="fas fa-check"></i>
+                          </li>`;
+      uploadedArea.classList.remove("onprogress");
+      uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML);
+    }
+  });
+  // xhr.setRequestHeader("Content-Type", "application/")
+  // let data = new FormData(form);
+  xhr.send(datat);
+}
+
+function upload() {
+  
+  upload_file_name.innerHTML = `Browse File to Upload`
+  base(name_of_file)
+
+}
+
+// async function api_call(){
+//   const api_response = await fetch(`/upload`, { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json'}})
+//   const response = await api_response.json()
+
+//   console.log("api response"+ response)
+//   // return response
+// }
+
+function toDataUrl(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+      var reader = new FileReader();
+      reader.onloadend = function() {
+          callback(reader.result);
+      }
+      reader.readAsDataURL(xhr.response);
+  };
+  xhr.open('GET', url);
+  xhr.responseType = 'blob';
+  xhr.send();
+}
+
+function base(nameFile) {
+  var base64 = "base"
+      toDataUrl(uploaded_pdf , function(myBase64) {
+      console.log(myBase64); // myBase64 is the base64 string
+      base64 = myBase64
+  
+      console.log('base64=' + base64);
+      console.log(typeof base64)
+  
+      const base64_split = base64.split(",")[1]
+      console.log(base64_split)
+  
+      body = {
+          "pdf_name": nameFile,
+          "pdf": base64_split
+      }
+  
+      console.log(body)
+
+      uploadFile(nam)
+      // .then(resp => 
+      //     update_refined_image(resp)
+  
+      // )
+  
+  })}
+
+
+
+  var xhr = new XMLHttpRequest()
+  xhr.open('GET', './static/json/drug.json', true)
+
+  xhr.onload = function() {
+    var block = JSON.parse(this.responseText)
+
+
+  }
+  xhr.send()
+
+    
+    
+    </script>
+
+
+    <script src="/static/js/account.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/static/css/profile_details.css">
+
+
+
+    <title>Profile_details</title>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light" style="background-color: #e1f2fe;">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img class="logo" src="/static/images/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home" style="font-size: 18px;">Home</a>
+                    </li>
+                </ul>
+                <!-- <a href="projects.html"><button type="button" class="btn btn-outline-secondary mx-2"
+                        style="border-radius: 15px 15px 15px 15px ;">View Projects</button></a>
+                <button class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Join
+                    Us</button> -->
+                <a id="join"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="user-details">
+            <a id="user-image"></a>
+            <h3 style="margin-top:2%;text-align: center;">Welcome! MedInvoice User</h3>
+        </div>
+        <div class="shadow-lg p-4 mb-4 my-4 bg-body rounded " id="personal_details">
+            <h2>Personal Details <a type="button" class="btn btn-info" id="editbtn" href="/Edit_details"><svg
+                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48"
+                        style=" fill:#000000;">
+                        <path
+                            d="M 36 5.0097656 C 34.205301 5.0097656 32.410791 5.6901377 31.050781 7.0507812 L 8.9160156 29.183594 C 8.4960384 29.603571 8.1884588 30.12585 8.0253906 30.699219 L 5.0585938 41.087891 A 1.50015 1.50015 0 0 0 6.9121094 42.941406 L 17.302734 39.974609 A 1.50015 1.50015 0 0 0 17.304688 39.972656 C 17.874212 39.808939 18.39521 39.50518 18.816406 39.083984 L 40.949219 16.949219 C 43.670344 14.228094 43.670344 9.7719064 40.949219 7.0507812 C 39.589209 5.6901377 37.794699 5.0097656 36 5.0097656 z M 36 7.9921875 C 37.020801 7.9921875 38.040182 8.3855186 38.826172 9.171875 A 1.50015 1.50015 0 0 0 38.828125 9.171875 C 40.403 10.74675 40.403 13.25325 38.828125 14.828125 L 36.888672 16.767578 L 31.232422 11.111328 L 33.171875 9.171875 C 33.957865 8.3855186 34.979199 7.9921875 36 7.9921875 z M 29.111328 13.232422 L 34.767578 18.888672 L 16.693359 36.962891 C 16.634729 37.021121 16.560472 37.065723 16.476562 37.089844 L 8.6835938 39.316406 L 10.910156 31.521484 A 1.50015 1.50015 0 0 0 10.910156 31.519531 C 10.933086 31.438901 10.975086 31.366709 11.037109 31.304688 L 29.111328 13.232422 z">
+                        </path>
+                    </svg> &nbsp Edit-details</a> </h2>
+            <br>
+            <table class="table table-striped" id="table-details">
+                <!-- <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead> -->
+                <tbody>
+                    <tr>
+                        <th scope="row" style="text-align:center">Name</th>
+                        <td>{{namet}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Email</th>
+                        <td>{{emailt}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Age</th>
+                        <td>{{aget}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Gender</th>
+                        <td>{{gendert}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Height</th>
+                        <td>{{heightt}} m</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Weight</th>
+                        <td>{{weightt}} Kg</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">BMI</th>
+                        <td>{{bmit}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Blood Group</th>
+                        <td>{{blood_groupt}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Contact info</th>
+                        <td>{{contactt}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">Total Prescriptions Uploaded</th>
+                        <td>MedInvoice User</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        current_user = {{ current_user_id | tojson}}
+
+        var profdata_json
+    
+        function data_read_prof(){
+            var xhr = new XMLHttpRequest()
+            xhr.open('GET', '/static/json/user_heal_data.json', true)
+        
+            xhr.onload = function () {
+                jsondata = JSON.parse(this.responseText)
+        
+                profdata_json = jsondata
+            }
+            xhr.send()
+            return 0
+        }
+    
+        async function editdetails() {
+            const id_data = await data_read_prof()
+        
+            const mytimeout = setTimeout(rundata_prof, 2000)
+        }
+
+        function rundata_prof(){
+            console.log(profdata_json);
+            delete profdata_json[current_user];
+            const FileSystem = require("fs");
+            FileSystem.writeFile('/static/json/user_heal_data.json', JSON.stringify(profdata_json), (err) => {
+            if (err) throw err;
+            });
+            console.log(profdata_json);
+        
+        }
+
+
+    </script>
+
+    
+    <script>
+
+        const navbar_join = document.getElementById('join')
+        const imgs = document.getElementById('user-image')
+    
+        current_user = {{ current_user_id | tojson}}
+        console.log(typeof current_user)
+    
+        var id_json
+    
+        function data_read(){
+            var xhr = new XMLHttpRequest()
+            xhr.open('GET', '/static/json/user_id.json', true)
+        
+            xhr.onload = function () {
+                jsondata = JSON.parse(this.responseText)
+        
+                id_json = jsondata
+            }
+            xhr.send()
+            return 0
+        }
+    
+        async function data_load() {
+            const id_data = await data_read()
+            const mytimeout = setTimeout(rundata, 2000)
+        }
+    
+        function rundata() {
+            console.log(id_json)
+            navbar_join.innerHTML = `<a href="/logout" class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Sign Out</a><b>
+                                     <img src="${id_json[current_user]["user_dp"]}" style='border-radius: 50%;height: 32px;width: 32px;margin-left:6px'>`
+
+            imgs.innerHTML = ` <img style= "width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 2%;
+            justify-content: center;
+            margin-left: 45%;" src="${id_json[current_user]["user_dp"]}">`
+        }
+    
+    
+        if( current_user == "not_defined") {
+            navbar_join.innerHTML = `<p>Error!!</p>`
+        }
+        else {
+            data_load()
+        }
+    
+    
+    </script>
+
+    <script src="/static/js/account.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+</body>
+
+</html>
