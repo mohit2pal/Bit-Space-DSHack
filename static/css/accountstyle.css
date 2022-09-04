@@ -250,14 +250,11 @@ section .details span {
 }
 
 
-#data{
-    margin-top:-50vh;
-}
-
 #box{
     width:80vw;
     height:30vh;
     margin-left:3vw;
+    margin-top: 8%;
     box-shadow: 10px 10px 10px 10px #06a74cdd;
     border-radius: 0 0 1.5vw;
     /* background-image: url(/static/images/wave.png); */
