@@ -289,7 +289,7 @@ function upload() {
   
   upload_file_name.innerHTML = `Browse File to Upload`
   base(name_of_file)
-  rewrite()
+  const myTimeout = setTimeout(rewrite, 5000)
 
 }
 
